@@ -2,11 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Navbar, Footer } from './components/index';
+import { ArticleDetailsPage, AuthPage } from './pages/index';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<App />} />
+        <Route path='/articles/:articleId' element={<ArticleDetailsPage />} />
+        <Route path='/auth/:mode' element={<AuthPage />} />
+      </Routes>
+      <Footer />
+    </Router>
   </React.StrictMode>
 );
 
