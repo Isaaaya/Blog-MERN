@@ -40,8 +40,8 @@ const CTA = () => {
             </p>
           </div>
           <div className="relative">
-            <div className="border bg-white text-textMain w-[340px] rounded-xl p-[6px] z-20 relative">
-              <img src={CTAImage} alt="Messengers" />
+            <div className="border bg-white text-textMain w-[300px] rounded-xl p-[6px] z-20 relative">
+              <img loading={"lazy"} src={CTAImage} alt="Messengers" />
               <div className="p-5 flex flex-col gap-2">
                 <h5 className="text-xl font-bold">
                   The best articles every week
@@ -53,7 +53,7 @@ const CTA = () => {
               </div>
             </div>
             <div className="bg-[#1C3142] w-[200px] h-[150px] absolute bottom-[-30px] left-[-35px] rounded-xl z-10"></div>
-            <div className="bg-[#FC5A5A] w-[200px] h-[200px] absolute top-[-30px] right-[-10px] rounded-xl z-10"></div>
+            <div className="bg-[#FC5A5A] w-[200px] h-[200px] absolute top-[-30px] right-3 rounded-xl z-10"></div>
           </div>
         </div>
       </section>

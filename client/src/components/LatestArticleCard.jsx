@@ -1,17 +1,20 @@
 import React from "react";
-import ArticleImage from "../assets/posts/post1.jpg";
+import { getMinimalisticCreationDate } from "../utils";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import Placeholder from "../assets/Placeholder.png";
 
-const LatestArticleCard = () => {
+const LatestArticleCard = ({ title, imageUrl, createdAt }) => {
+  const creationDate = getMinimalisticCreationDate(createdAt);
   return (
-    <div className="flex gap-6">
-      <img
-        className="w-[80px] h-[80px] rounded-lg"
-        src={ArticleImage}
+    <div className="flex gap-4">
+      <LazyLoadImage
+        className="w-[80px] h-[80px] rounded-lg object-cover"
+        src={imageUrl || Placeholder}
         alt="Article banner"
       />
       <div>
-        <h3 className="font-semibold">Help children get better education</h3>
-        <p className="text-xs">Jun 27, 2022</p>
+        <h3 className="font-semibold">{title}</h3>
+        <p className="text-xs text-textLight">{creationDate}</p>
       </div>
     </div>
   );

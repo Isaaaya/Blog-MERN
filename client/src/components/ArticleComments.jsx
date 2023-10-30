@@ -1,13 +1,17 @@
 import React from "react";
 import { ArticleComment } from "../components/index";
 
-const ArticleComments = () => {
+const ArticleComments = ({ comments, refetch }) => {
   return (
-    <section>
-      <h3 className="pb-5 font-semibold">All Comments (3)</h3>
+    <section className="w-[100%]">
+      <h3 className="pb-5 font-semibold text-center">
+        {comments?.length > 0
+          ? `All Comments (${comments?.length})`
+          : "No comments yet..."}
+      </h3>
       <div className="flex flex-col gap-8">
-        {[...Array(3)].map((item) => (
-          <ArticleComment />
+        {comments?.map((comment) => (
+          <ArticleComment refetch={refetch} key={comment?._id} {...comment} />
         ))}
       </div>
     </section>
